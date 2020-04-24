@@ -38,13 +38,21 @@ Commit your code regularly and use descriptive messages. This helps both you (in
 
 Demonstrate your understanding of this week's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
-- [ ] What is the purpose of using _sessions_?
+- [x] What is the purpose of using _sessions_?
 
-- [ ] What does bcrypt do to help us store passwords in a secure manner.
+  Sessions are a way to save user data on the server across multiple uses of the site. This is a pretty flexible term and can be used for many things. One common use-case is to store an acknowledgement that a user has logged in so they do not need to login every time they use the site.
 
-- [ ] What does bcrypt do to slow down attackers?
+- [x] What does bcrypt do to help us store passwords in a secure manner.
 
-- [ ] What are the three parts of the JSON Web Token?
+  bcrypt allows us to hash passwords before storing them in a database. Hashes are a one way operation, meaning that a password can not be found using the hash of that password. Saving only the hash of a password on the server means that if you server is compromised, attackers will not be able to steal user passwords.
+
+- [x] What does bcrypt do to slow down attackers?
+
+  One way bcrypt slows down attackers, in addition to simply hashing, is by using either multiple rounds or seeds. Seeds are strings that are appended to the end of a string before it is hashed. Rounds correspond to hashing a string and then re-hashing the output 2^number of rounds times. Both of these methods result in more differentiated output making it difficult for attackers to guess known common hashes to access your site.
+
+- [x] What are the three parts of the JSON Web Token?
+
+  The three components are the header, payload, and signature. The header includes the type of token and encryption algorithm. The payload contains any information you would like to save in the token. And the signature is the result of signing the header and payload with a secure secret key.
 
 ## Minimum Viable Product
 
