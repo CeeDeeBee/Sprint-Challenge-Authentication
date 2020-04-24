@@ -19,7 +19,7 @@ router.post("/register", (req, res) => {
 			});
 	} else {
 		res
-			.status(401)
+			.status(400)
 			.json({ message: "User must contain username and password" });
 	}
 });
